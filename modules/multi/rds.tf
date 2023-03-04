@@ -19,8 +19,8 @@ resource "aws_db_instance" "rds_instance" {
   publicly_accessible    = true
   vpc_security_group_ids = [aws_security_group.rds_security_group.id]
   db_subnet_group_name    = "${aws_db_subnet_group.rds_subnet_group.name}"
-  username               = "iacTestUser"
-  password               = "userPassTest"
+  username               = "UserEspecificoPraCaramba"
+  password               = "SenhaSuperDificil123!@#%"
 
   tags = {
     "Name" = "RDS-${local.project_name}"
