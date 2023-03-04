@@ -2,7 +2,7 @@ resource "aws_vpc" "vpc" {
   cidr_block           = "10.20.0.0/16"
   enable_dns_hostnames = true
   tags = {
-   Name = "VPC-${local.project_name}"
+   Name = "vpc-${local.project_name}"
  }
 }
 
@@ -21,7 +21,7 @@ resource "aws_subnet" "public_subnet" {
     map_public_ip_on_launch = true
     
     tags = {
-        Name = "PublicSubnet-${local.project_name}-${count.index}"
+        Name = "Sub-${local.project_name}-${count.index}"
     }
 }
 

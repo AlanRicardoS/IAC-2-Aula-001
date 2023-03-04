@@ -1,6 +1,6 @@
 resource "aws_security_group" "server_security_group" {
   count = 2
-  name        = "security_group_${count.index}"
+  name        = "sg_${count.index}"
   vpc_id      = aws_vpc.vpc.id
 
   ingress {
@@ -17,14 +17,14 @@ resource "aws_security_group" "server_security_group" {
   }
 
   tags = {
-    "Name" = "ServerSecurityGroup-${count.index}-${local.project_name}"
+    "Name" = "SSG-${count.index}-${local.project_name}"
   }
 }
 
 
 
 resource "aws_security_group" "load_balancer_security_group" {
-  name        = "terraform_alb_secuload_balancer_security_grouprity_group"
+  name        = "terraform_load_balancer_security_grouprity_group"
   vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
@@ -65,6 +65,6 @@ resource "aws_security_group" "rds_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    "Name" = "RDSSecurityGroup-${local.project_name}"
+    "Name" = "RDSSG-${local.project_name}"
   }
 }

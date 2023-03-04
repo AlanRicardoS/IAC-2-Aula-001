@@ -7,6 +7,6 @@ resource "aws_lb" "load_balancer" {
   security_groups    = [aws_security_group.load_balancer_security_group.id]
 
   tags = {
-    "Name" = "LoadBalancer-${local.project_name}"
+    "Name" = "LB-${local.project_name}"
   }
 }
