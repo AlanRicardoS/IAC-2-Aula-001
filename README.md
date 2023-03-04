@@ -9,10 +9,8 @@
 	- 1 Balanceador de Carga
 	- Security Group para cada recurso acima (EC2, RDS e Balanceador)
 
-
-```
 terraform init
 terraform validate
 terraform plan
 terraform apply
-```
+
